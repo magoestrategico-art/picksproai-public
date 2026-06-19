@@ -9,11 +9,13 @@ export const metadata: Metadata = {
     title: "Juego responsable | PicksProAI",
     description: "Información para comprender los riesgos de las apuestas y mantener hábitos responsables.",
     url: "/juego-responsable",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PicksProAI" }],
   },
   twitter: {
     card: "summary",
     title: "Juego responsable | PicksProAI",
     description: "Principios para un uso responsable de la información sobre apuestas deportivas.",
+    images: ["/og-image.png"],
   },
 };
 

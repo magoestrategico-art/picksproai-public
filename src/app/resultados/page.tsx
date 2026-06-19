@@ -26,11 +26,13 @@ export const metadata: Metadata = {
     title: "Resultados históricos | PicksProAI",
     description: "Historial público y auditable de resultados, cuotas, acierto y ROI de PicksProAI.",
     url: "/resultados",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PicksProAI" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Resultados históricos | PicksProAI",
     description: "Historial público y auditable de resultados, cuotas, acierto y ROI.",
+    images: ["/og-image.png"],
   },
 };
 

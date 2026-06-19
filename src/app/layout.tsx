@@ -20,6 +20,10 @@ export const metadata: Metadata = {
     "PicksProAI",
   ],
   applicationName: "PicksProAI",
+  // Google Search Console verification:
+  // verification: {
+  //   google: "PENDIENTE_DE_CODIGO_GOOGLE",
+  // },
   openGraph: {
     title: "PicksProAI | Pronósticos de fútbol con estadísticas verificables",
     description: "Picks de fútbol con análisis estadístico, resultados históricos auditables, ROI y transparencia completa.",
@@ -27,11 +31,20 @@ export const metadata: Metadata = {
     siteName: "PicksProAI",
     locale: "es_ES",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PicksProAI",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "PicksProAI | Pronósticos de fútbol con estadísticas verificables",
     description: "Picks de fútbol con análisis estadístico, resultados auditables, ROI y transparencia completa.",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,

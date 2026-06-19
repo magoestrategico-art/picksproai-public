@@ -9,11 +9,13 @@ export const metadata: Metadata = {
     title: "Aviso legal | PicksProAI",
     description: "Naturaleza informativa, condiciones de uso y limitación de responsabilidad de PicksProAI.",
     url: "/legal",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PicksProAI" }],
   },
   twitter: {
     card: "summary",
     title: "Aviso legal | PicksProAI",
     description: "Naturaleza informativa y condiciones de uso de PicksProAI.",
+    images: ["/og-image.png"],
   },
 };
 

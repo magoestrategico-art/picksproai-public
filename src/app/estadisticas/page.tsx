@@ -38,11 +38,13 @@ export const metadata: Metadata = {
     title: "Estadísticas y rendimiento | PicksProAI",
     description: "ROI, porcentaje de acierto, beneficio acumulado y rendimiento histórico verificable.",
     url: "/estadisticas",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PicksProAI" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Estadísticas y rendimiento | PicksProAI",
     description: "ROI, acierto, beneficio acumulado y rendimiento histórico verificable.",
+    images: ["/og-image.png"],
   },
 };
 

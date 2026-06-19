@@ -10,11 +10,13 @@ export const metadata: Metadata = {
     title: "PicksProAI | Pronósticos de fútbol con estadísticas verificables",
     description: "Consulta picks de fútbol activos basados en datos, probabilidades y valor esperado.",
     url: "/",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PicksProAI" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "PicksProAI | Pronósticos de fútbol con estadísticas verificables",
     description: "Picks de fútbol activos basados en datos, probabilidades y valor esperado.",
+    images: ["/og-image.png"],
   },
 };
 

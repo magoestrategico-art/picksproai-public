@@ -9,11 +9,13 @@ export const metadata: Metadata = {
     title: "Metodología y transparencia | PicksProAI",
     description: "Cómo se generan los picks y cómo interpretar el ROI, el acierto y los resultados públicos.",
     url: "/metodologia",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PicksProAI" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Metodología y transparencia | PicksProAI",
     description: "Cómo se generan los picks y cómo interpretar sus métricas públicas.",
+    images: ["/og-image.png"],
   },
 };
 
