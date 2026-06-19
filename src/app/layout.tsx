@@ -52,10 +52,26 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
               <Link href="/resultados">Resultados</Link>
               <Link href="/estadisticas">Estadísticas</Link>
               <Link href="/metodologia">Metodología</Link>
+              <Link href="/legal">Legal</Link>
+              <Link href="/juego-responsable">Juego responsable</Link>
             </div>
           </nav>
         </header>
         {children}
+        <footer className="site-footer">
+          <div className="container site-footer__inner">
+            <div>
+              <Link className="site-brand" href="/">Picks Pro <span>AI</span></Link>
+              <p>© PicksProAI 2026</p>
+            </div>
+            <nav className="site-footer__links" aria-label="Enlaces legales">
+              <Link href="/metodologia">Metodología</Link>
+              <Link href="/legal">Legal</Link>
+              <Link href="/juego-responsable">Juego Responsable</Link>
+            </nav>
+          </div>
+          <div className="container site-footer__notice">Contenido destinado exclusivamente a mayores de 18 años.</div>
+        </footer>
       </body>
     </html>
   );

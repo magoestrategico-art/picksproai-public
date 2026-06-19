@@ -181,7 +181,6 @@ export default function ResultsPage() {
         </section>
       </div>
 
-      <footer><div className="container">Picks Pro AI © 2026</div></footer>
     </main>
   );
 }
