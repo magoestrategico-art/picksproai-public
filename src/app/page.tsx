@@ -1,5 +1,22 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import picksData from "../../public/data/public_picks.json";
+
+export const metadata: Metadata = {
+  title: { absolute: "PicksProAI | Pronósticos de fútbol con estadísticas verificables" },
+  description: "Picks de fútbol activos basados en análisis estadístico, probabilidades y valor esperado positivo.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "PicksProAI | Pronósticos de fútbol con estadísticas verificables",
+    description: "Consulta picks de fútbol activos basados en datos, probabilidades y valor esperado.",
+    url: "/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PicksProAI | Pronósticos de fútbol con estadísticas verificables",
+    description: "Picks de fútbol activos basados en datos, probabilidades y valor esperado.",
+  },
+};
 
 type Pick = {
   id: string | number;

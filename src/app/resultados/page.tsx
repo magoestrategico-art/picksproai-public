@@ -19,8 +19,19 @@ type NormalizedStatus = "won" | "lost" | "push" | "void" | "canceled" | "other";
 const historicalResults = resultsData as Result[];
 
 export const metadata: Metadata = {
-  title: "Resultados | Picks Pro AI",
-  description: "Historial público de resultados de Picks Pro AI.",
+  title: "Resultados históricos",
+  description: "Consulta el historial público y auditable de PicksProAI: picks ganados, perdidos, cuotas, porcentaje de acierto y ROI.",
+  alternates: { canonical: "/resultados" },
+  openGraph: {
+    title: "Resultados históricos | PicksProAI",
+    description: "Historial público y auditable de resultados, cuotas, acierto y ROI de PicksProAI.",
+    url: "/resultados",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Resultados históricos | PicksProAI",
+    description: "Historial público y auditable de resultados, cuotas, acierto y ROI.",
+  },
 };
 
 const statusDetails: Record<NormalizedStatus, { label: string; className: string }> = {

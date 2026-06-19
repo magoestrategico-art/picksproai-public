@@ -2,8 +2,19 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Metodología | Picks Pro AI",
-  description: "Metodología, métricas y política de transparencia de Picks Pro AI.",
+  title: "Metodología y transparencia",
+  description: "Descubre cómo PicksProAI analiza datos históricos, detecta valor esperado y calcula ROI y porcentaje de acierto con transparencia.",
+  alternates: { canonical: "/metodologia" },
+  openGraph: {
+    title: "Metodología y transparencia | PicksProAI",
+    description: "Cómo se generan los picks y cómo interpretar el ROI, el acierto y los resultados públicos.",
+    url: "/metodologia",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Metodología y transparencia | PicksProAI",
+    description: "Cómo se generan los picks y cómo interpretar sus métricas públicas.",
+  },
 };
 
 const markets = [

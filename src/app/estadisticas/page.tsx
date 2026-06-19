@@ -31,8 +31,19 @@ type PerformanceRow = {
 const historicalResults = resultsData as HistoricalResult[];
 
 export const metadata: Metadata = {
-  title: "Estadísticas | Picks Pro AI",
-  description: "Rendimiento histórico público de Picks Pro AI.",
+  title: "Estadísticas y rendimiento",
+  description: "Analiza las estadísticas públicas de PicksProAI: ROI, porcentaje de acierto, beneficio acumulado y rendimiento por liga y mercado.",
+  alternates: { canonical: "/estadisticas" },
+  openGraph: {
+    title: "Estadísticas y rendimiento | PicksProAI",
+    description: "ROI, porcentaje de acierto, beneficio acumulado y rendimiento histórico verificable.",
+    url: "/estadisticas",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Estadísticas y rendimiento | PicksProAI",
+    description: "ROI, acierto, beneficio acumulado y rendimiento histórico verificable.",
+  },
 };
 
 function normalizeStatus(status: string) {
