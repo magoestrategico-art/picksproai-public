@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import "./globals.css";
@@ -85,6 +86,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
           </div>
           <div className="container site-footer__notice">Contenido destinado exclusivamente a mayores de 18 años.</div>
         </footer>
+        <GoogleAnalytics gaId="G-P85RJSTNZE" />
       </body>
     </html>
   );
