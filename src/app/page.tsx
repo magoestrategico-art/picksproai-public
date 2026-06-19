@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import picksData from "../../public/data/public_picks.json";
+import resultsData from "../../public/data/public_results.json";
 
 export const metadata: Metadata = {
   title: { absolute: "PicksProAI | Pronósticos de fútbol con estadísticas verificables" },
@@ -36,6 +37,7 @@ type Pick = {
 };
 
 const picks = picksData as Pick[];
+const historicalResults = resultsData as Pick[];
 
 const formatDate = (date: string) => {
   const parsedDate = new Date(date.includes("T") ? date : `${date}T12:00:00`);
@@ -47,12 +49,58 @@ const formatDate = (date: string) => {
   }).format(parsedDate);
 };
 
+const parseHistoricalDate = (date: string) => {
+  const shortDate = /^(\d{2})\.(\d{2})$/.exec(date);
+  if (shortDate) return new Date(2026, Number(shortDate[2]) - 1, Number(shortDate[1]), 0, 0);
+  return new Date(date.includes("T") ? date : `${date}T00:00:00`);
+};
+
+const formatPercentage = (value: number, signed = false) =>
+  `${signed && value >= 0 ? "+" : ""}${new Intl.NumberFormat("es-ES", {
+    minimumFractionDigits: 1,
+    maximumFractionDigits: 1,
+  }).format(value)} %`;
+
 export default function Home() {
   const publicPicks = picks;
-  const leagueCount = new Set(publicPicks.map((pick) => pick.liga)).size;
-  const averageOdds = publicPicks.length
-    ? publicPicks.reduce((total, pick) => total + pick.cuota, 0) / publicPicks.length
-    : 0;
+  const results = historicalResults.map((result) => ({
+    ...result,
+    normalizedStatus: result.estado.trim().toLowerCase(),
+  }));
+  const won = results.filter((result) => ["won", "acertado"].includes(result.normalizedStatus)).length;
+  const lost = results.filter((result) => ["lost", "fallado"].includes(result.normalizedStatus)).length;
+  const settled = won + lost;
+  const hitRate = settled > 0 ? (won / settled) * 100 : 0;
+  const netProfit = results.reduce((total, result) => {
+    if (["won", "acertado"].includes(result.normalizedStatus)) return total + result.cuota - 1;
+    if (["lost", "fallado"].includes(result.normalizedStatus)) return total - 1;
+    return total;
+  }, 0);
+  const roi = results.length > 0 ? (netProfit / results.length) * 100 : 0;
+  const latestDate = results.reduce<Date | null>((latest, result) => {
+    const current = parseHistoricalDate(result.fecha);
+    if (Number.isNaN(current.getTime())) return latest;
+    return latest === null || current > latest ? current : latest;
+  }, null);
+  const lastUpdated = latestDate
+    ? new Intl.DateTimeFormat("es-ES", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      }).format(latestDate).replace(",", "")
+    : "Sin datos";
+
+  const trustMetrics = [
+    { label: "Picks resueltos", value: results.length, note: "Histórico público" },
+    { label: "Ganados", value: won, note: "Resultados positivos" },
+    { label: "Perdidos", value: lost, note: "Resultados negativos" },
+    { label: "Acierto", value: formatPercentage(hitRate), note: "Sobre ganados y perdidos" },
+    { label: "ROI", value: formatPercentage(roi, true), note: "Stake fijo de 1 unidad", positive: roi >= 0 },
+    { label: "Beneficio neto", value: `${netProfit >= 0 ? "+" : ""}${netProfit.toFixed(2)} u`, note: "Unidades acumuladas", positive: netProfit >= 0 },
+  ];
 
   return (
     <main>
@@ -70,31 +118,34 @@ export default function Home() {
       </header>
 
       <div className="container content">
-        <section aria-labelledby="stats-title">
+        <section className="trust-section" aria-labelledby="stats-title">
           <div className="section-heading">
             <div>
-              <span className="section-kicker">Resumen</span>
-              <h2 id="stats-title">Estadísticas básicas</h2>
+              <span className="section-kicker">Histórico verificado</span>
+              <h2 id="stats-title">Rendimiento público</h2>
             </div>
-            <span className="live-indicator"><i /> Datos actualizados</span>
+            <span className="last-updated"><i /> Última actualización: {lastUpdated}</span>
           </div>
 
-          <div className="stats-grid">
-            <article className="stat-card">
-              <span>Picks activos</span>
-              <strong>{publicPicks.length}</strong>
-              <small>Selecciones disponibles</small>
-            </article>
-            <article className="stat-card">
-              <span>Ligas</span>
-              <strong>{leagueCount}</strong>
-              <small>Competiciones analizadas</small>
-            </article>
-            <article className="stat-card">
-              <span>Cuota media</span>
-              <strong>{averageOdds.toFixed(2)}</strong>
-              <small>Sobre los picks activos</small>
-            </article>
+          <div className="trust-stats">
+            {trustMetrics.map((metric) => (
+              <article className="stat-card trust-stat-card" key={metric.label}>
+                <span>{metric.label}</span>
+                <strong className={metric.positive === undefined ? "" : metric.positive ? "positive" : "negative"}>{metric.value}</strong>
+                <small>{metric.note}</small>
+              </article>
+            ))}
+          </div>
+
+          <div className="trust-summary">
+            <div>
+              <span className="trust-summary__label">Transparencia en datos</span>
+              <p>Histórico verificado de <strong>{results.length} picks resueltos</strong> con <strong>{formatPercentage(hitRate)} de acierto</strong> y ROI de <strong className={roi >= 0 ? "positive" : "negative"}>{formatPercentage(roi, true)}</strong>.</p>
+            </div>
+            <div className="trust-summary__actions">
+              <Link className="button-link" href="/resultados">Ver resultados</Link>
+              <Link className="button-link button-link--secondary" href="/estadisticas">Ver estadísticas</Link>
+            </div>
           </div>
         </section>
 
