@@ -304,6 +304,39 @@ h2 {
 .performance-table td:not(:first-child) { font-variant-numeric: tabular-nums; }
 .evolution-table td:nth-child(3), .evolution-table td:nth-child(4) { font-variant-numeric: tabular-nums; }
 
+.dashboard-charts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.chart-card {
+  min-width: 0;
+  padding: 24px 20px 18px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: radial-gradient(circle at 85% 0, rgba(56, 189, 248, .05), transparent 35%), linear-gradient(145deg, rgba(17, 28, 43, .9), rgba(9, 15, 24, .95));
+  box-shadow: 0 18px 48px rgba(0, 0, 0, .2);
+}
+
+.chart-card--wide { grid-column: 1 / -1; }
+.chart-card__heading { display: flex; align-items: start; justify-content: space-between; gap: 18px; margin-bottom: 18px; padding: 0 4px; }
+.chart-card__kicker { color: var(--accent-blue); font-size: .62rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.chart-card h3 { margin: 5px 0 0; font-size: 1rem; letter-spacing: -.02em; }
+.chart-card__hint, .chart-legend-dot { color: var(--muted); font-size: .65rem; white-space: nowrap; }
+.chart-legend-dot { display: inline-flex; align-items: center; gap: 7px; }
+.chart-legend-dot::before { content: ""; width: 18px; height: 3px; border-radius: 999px; background: linear-gradient(90deg, var(--accent-blue), var(--accent)); }
+.chart-canvas { width: 100%; height: 300px; }
+.chart-canvas--line { height: 340px; }
+.recharts-surface:focus { outline: none; }
+.chart-placeholder { min-height: 360px; overflow: hidden; position: relative; }
+.chart-placeholder:not(.chart-card--wide) { min-height: 342px; }
+.chart-placeholder::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, transparent 20%, rgba(148, 163, 184, .045) 42%, transparent 64%); transform: translateX(-100%); animation: chart-shimmer 1.6s ease-in-out infinite; }
+
+@keyframes chart-shimmer {
+  to { transform: translateX(100%); }
+}
+
 footer {
   padding: 26px 0;
   border-top: 1px solid var(--border);
@@ -325,6 +358,11 @@ footer {
   .page-hero .eyebrow { margin-top: 38px; }
   .results-content { padding: 44px 0 60px; }
   .history-section { margin-top: 50px; }
+  .statistics-section { margin-top: 50px; }
+  .dashboard-charts { grid-template-columns: 1fr; }
+  .chart-card--wide { grid-column: auto; }
+  .chart-card { padding: 20px 12px 14px; }
+  .chart-canvas, .chart-canvas--line { height: 280px; }
   .results-table-wrap { overflow: visible; border: 0; background: transparent; box-shadow: none; }
   .results-table, .results-table tbody { display: block; }
   .results-table thead { display: none; }
@@ -342,4 +380,5 @@ footer {
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+  .chart-placeholder::after { animation: none; }
 }

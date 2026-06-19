@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import resultsData from "../../../public/data/public_results.json";
+import StatisticsCharts from "./StatisticsCharts";
 
 type HistoricalResult = {
   id: string | number;
@@ -138,7 +139,7 @@ export default function StatisticsPage() {
   const hitRate = settled > 0 ? (won / settled) * 100 : null;
   const netProfit = results.reduce((total, result) => total + result.profit, 0);
   const roi = results.length > 0 ? (netProfit / results.length) * 100 : null;
-  const byLeague = groupPerformance(results, "liga");
+  const byLeague = groupPerformance(results, "liga").sort((a, b) => b.roi - a.roi);
   const byMarket = groupPerformance(results, "mercado");
 
   let cumulativeProfit = 0;
@@ -157,6 +158,25 @@ export default function StatisticsPage() {
     { label: "ROI simple", value: formatPercentage(roi, true), note: "Stake fijo de 1 unidad" },
     { label: "Beneficio neto", value: `${netProfit >= 0 ? "+" : ""}${netProfit.toFixed(2)} u`, note: "Beneficio acumulado" },
   ];
+
+  const chartEvolution = evolution.map((result) => ({
+    date: new Intl.DateTimeFormat("es-ES", { day: "2-digit", month: "short" }).format(parseDate(result.fecha)),
+    match: `${result.local} vs ${result.visitante}`,
+    profit: Number(result.profit.toFixed(2)),
+    cumulative: Number(result.cumulativeProfit.toFixed(2)),
+  }));
+  const chartMarkets = byMarket.map((market) => ({
+    name: market.name,
+    total: market.total,
+    won: market.won,
+    roi: Number(market.roi.toFixed(1)),
+  }));
+  const chartLeagues = byLeague.map((league) => ({
+    name: league.name,
+    total: league.total,
+    hitRate: Number((league.hitRate ?? 0).toFixed(1)),
+    roi: Number(league.roi.toFixed(1)),
+  }));
 
   return (
     <main>
@@ -190,6 +210,17 @@ export default function StatisticsPage() {
               </article>
             ))}
           </div>
+        </section>
+
+        <section className="statistics-section" aria-labelledby="visual-dashboard-title">
+          <div className="section-heading">
+            <div>
+              <span className="section-kicker">Dashboard</span>
+              <h2 id="visual-dashboard-title">Rendimiento visual</h2>
+            </div>
+            <span className="pick-count">{results.length} picks analizados</span>
+          </div>
+          <StatisticsCharts evolution={chartEvolution} markets={chartMarkets} leagues={chartLeagues} />
         </section>
 
         <section className="statistics-section" aria-labelledby="league-performance-title">
