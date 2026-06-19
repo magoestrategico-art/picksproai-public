@@ -86,7 +86,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
           </div>
           <div className="container site-footer__notice">Contenido destinado exclusivamente a mayores de 18 años.</div>
         </footer>
-        <GoogleAnalytics gaId="G-P85RJSTNZE" />
+        <GoogleAnalytics gaId="G-NXLTZLMJTK" />
       </body>
     </html>
   );
