@@ -1,3 +1,4 @@
+import Link from "next/link";
 import picksData from "../../public/data/public_picks.json";
 
 type Pick = {
@@ -42,6 +43,9 @@ export default function Home() {
           <span className="eyebrow"><i /> Inteligencia aplicada al deporte</span>
           <h1>Picks Pro <span>AI</span></h1>
           <p>Predicciones deportivas basadas en datos históricos.</p>
+          <div className="hero-actions">
+            <Link className="button-link" href="/resultados">Ver resultados</Link>
+          </div>
         </div>
       </header>
 
