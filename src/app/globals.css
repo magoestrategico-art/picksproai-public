@@ -99,7 +99,7 @@ h1 span { color: var(--accent); }
   line-height: 1.7;
 }
 
-.hero-actions { margin-top: 28px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
 
 .button-link {
   display: inline-flex;
@@ -120,6 +120,17 @@ h1 span { color: var(--accent); }
   transform: translateY(-2px);
   border-color: rgba(74, 222, 128, .65);
   background: rgba(74, 222, 128, .15);
+}
+
+.button-link--secondary {
+  border-color: rgba(56, 189, 248, .28);
+  background: rgba(56, 189, 248, .07);
+  color: var(--accent-blue);
+}
+
+.button-link--secondary:hover {
+  border-color: rgba(56, 189, 248, .55);
+  background: rgba(56, 189, 248, .12);
 }
 
 .content { padding: 64px 0 80px; }
@@ -288,6 +299,10 @@ h2 {
 .result-badge--void { border-color: rgba(192, 132, 252, .22); background: rgba(192, 132, 252, .08); color: #c084fc; }
 .result-badge--canceled { border-color: rgba(148, 163, 184, .2); background: rgba(148, 163, 184, .08); color: #aab4c3; }
 .result-badge--other { border-color: rgba(148, 163, 184, .2); background: rgba(148, 163, 184, .08); color: #aab4c3; }
+.statistics-section { margin-top: 64px; }
+.negative { color: #f87171 !important; }
+.performance-table td:not(:first-child) { font-variant-numeric: tabular-nums; }
+.evolution-table td:nth-child(3), .evolution-table td:nth-child(4) { font-variant-numeric: tabular-nums; }
 
 footer {
   padding: 26px 0;

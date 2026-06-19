@@ -94,6 +94,9 @@ export default function ResultsPage() {
           <span className="eyebrow"><i /> Historial público</span>
           <h1>Resultados</h1>
           <p>Seguimiento transparente de los picks publicados por Picks Pro AI.</p>
+          <div className="hero-actions">
+            <Link className="button-link button-link--secondary" href="/estadisticas">Ver estadísticas</Link>
+          </div>
         </div>
       </header>
 

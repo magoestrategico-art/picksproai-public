@@ -45,6 +45,7 @@ export default function Home() {
           <p>Predicciones deportivas basadas en datos históricos.</p>
           <div className="hero-actions">
             <Link className="button-link" href="/resultados">Ver resultados</Link>
+            <Link className="button-link button-link--secondary" href="/estadisticas">Ver estadísticas</Link>
           </div>
         </div>
       </header>
