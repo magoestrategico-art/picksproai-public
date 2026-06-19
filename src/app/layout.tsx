@@ -66,6 +66,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
               <Link href="/resultados">Resultados</Link>
               <Link href="/estadisticas">Estadísticas</Link>
               <Link href="/rendimiento-ligas">Rendimiento por ligas</Link>
+              <Link href="/sobre">Sobre</Link>
               <Link href="/metodologia">Metodología</Link>
               <Link href="/legal">Legal</Link>
               <Link href="/juego-responsable">Juego responsable</Link>
