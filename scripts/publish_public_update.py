@@ -1,54 +1,64 @@
-"""Exporta, valida, publica y versiona los picks públicos de Picks Pro."""
+"""Exporta, valida, publica y versiona los datos públicos de Picks Pro."""
 
 from __future__ import annotations
 
+import argparse
 import json
 import math
 import os
 import shutil
 import subprocess
 import sys
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
 
 PRIVATE_ROOT = Path(r"C:\Users\Usuario\Desktop\ligas_10")
-EXPORTER = PRIVATE_ROOT / "scripts" / "export_public_picks.py"
-SOURCE = PRIVATE_ROOT / "public_export" / "public_picks.json"
-
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-DESTINATION = PROJECT_ROOT / "public" / "data" / "public_picks.json"
-DESTINATION_GIT_PATH = "public/data/public_picks.json"
-
 REQUIRED_FIELDS = {
-    "id",
-    "fecha",
-    "liga",
-    "local",
-    "visitante",
-    "mercado",
-    "seleccion",
-    "cuota",
-    "probabilidad",
-    "ev",
-    "categoria",
-    "estado",
+    "id", "fecha", "liga", "local", "visitante", "mercado", "seleccion",
+    "cuota", "probabilidad", "ev", "categoria", "estado",
 }
 REQUIRED_TEXT_FIELDS = {
-    "fecha",
-    "liga",
-    "local",
-    "visitante",
-    "mercado",
-    "seleccion",
-    "categoria",
-    "estado",
+    "fecha", "liga", "local", "visitante", "mercado", "seleccion", "categoria", "estado",
 }
+ACTIVE_STATUSES = {"pending", "pendiente", "active"}
+RESULT_STATUSES = {"won", "lost", "push", "void", "canceled"}
+
+
+@dataclass(frozen=True)
+class PublicDataset:
+    name: str
+    exporter: Path
+    source: Path
+    destination: Path
+    git_path: str
+    allowed_statuses: set[str]
+
+
+DATASETS = (
+    PublicDataset(
+        "picks",
+        PRIVATE_ROOT / "scripts" / "export_public_picks.py",
+        PRIVATE_ROOT / "public_export" / "public_picks.json",
+        PROJECT_ROOT / "public" / "data" / "public_picks.json",
+        "public/data/public_picks.json",
+        ACTIVE_STATUSES,
+    ),
+    PublicDataset(
+        "results",
+        PRIVATE_ROOT / "scripts" / "export_public_results.py",
+        PRIVATE_ROOT / "public_export" / "public_results.json",
+        PROJECT_ROOT / "public" / "data" / "public_results.json",
+        "public/data/public_results.json",
+        RESULT_STATUSES,
+    ),
+)
 
 
 def run(command: list[str], *, cwd: Path) -> subprocess.CompletedProcess[str]:
-    """Ejecuta un comando mostrando su salida y deteniéndose si falla."""
-    print(f"> {' '.join(command)}")
+    print(f"> {' '.join(command)}", flush=True)
     return subprocess.run(command, cwd=cwd, check=True, text=True)
 
 
@@ -64,107 +74,129 @@ def exporter_python() -> str:
     return str(private_python) if private_python.is_file() else sys.executable
 
 
-def validate_pick(pick: Any, index: int) -> None:
-    if not isinstance(pick, dict):
-        raise ValueError(f"El pick {index} no es un objeto JSON.")
+def validate_record(record: Any, index: int, dataset: PublicDataset) -> None:
+    label = f"{dataset.name}[{index}]"
+    if not isinstance(record, dict):
+        raise ValueError(f"{label} no es un objeto JSON.")
 
-    missing_fields = REQUIRED_FIELDS - pick.keys()
-    if missing_fields:
-        missing = ", ".join(sorted(missing_fields))
-        raise ValueError(f"El pick {index} no contiene estos campos: {missing}")
+    missing = REQUIRED_FIELDS - record.keys()
+    if missing:
+        raise ValueError(f"{label} no contiene estos campos: {', '.join(sorted(missing))}")
 
-    if isinstance(pick["id"], bool) or not isinstance(pick["id"], (int, str)):
-        raise ValueError(f"El pick {index} tiene un id inválido.")
-    if isinstance(pick["id"], str) and not pick["id"].strip():
-        raise ValueError(f"El pick {index} tiene un id vacío.")
+    if isinstance(record["id"], bool) or not isinstance(record["id"], (int, str)):
+        raise ValueError(f"{label} tiene un id inválido.")
+    if isinstance(record["id"], str) and not record["id"].strip():
+        raise ValueError(f"{label} tiene un id vacío.")
 
     for field in REQUIRED_TEXT_FIELDS:
-        if not isinstance(pick[field], str) or not pick[field].strip():
-            raise ValueError(f"El pick {index} tiene un campo {field!r} inválido.")
+        if not isinstance(record[field], str) or not record[field].strip():
+            raise ValueError(f"{label} tiene un campo {field!r} inválido.")
+
+    normalized_status = record["estado"].strip().lower()
+    if normalized_status not in dataset.allowed_statuses:
+        raise ValueError(f"{label} tiene un estado no permitido: {record['estado']!r}")
 
     for field in ("cuota", "probabilidad", "ev"):
-        value = pick[field]
+        value = record[field]
         if isinstance(value, bool) or not isinstance(value, (int, float)):
-            raise ValueError(f"El pick {index} tiene un campo {field!r} no numérico.")
+            raise ValueError(f"{label} tiene un campo {field!r} no numérico.")
         if not math.isfinite(float(value)):
-            raise ValueError(f"El pick {index} tiene un campo {field!r} no finito.")
+            raise ValueError(f"{label} tiene un campo {field!r} no finito.")
 
-    if pick["cuota"] <= 0:
-        raise ValueError(f"El pick {index} debe tener una cuota mayor que cero.")
-    if not 0 <= pick["probabilidad"] <= 100:
-        raise ValueError(f"El pick {index} tiene una probabilidad fuera de rango.")
-
-
-def read_and_validate_source() -> tuple[list[dict[str, Any]], bytes]:
-    if not SOURCE.is_file():
-        raise FileNotFoundError(f"No existe el JSON exportado: {SOURCE}")
-
-    source_bytes = SOURCE.read_bytes()
-    source_text = source_bytes.decode("utf-8")
-    picks = json.loads(source_text)
-
-    if not isinstance(picks, list) or not picks:
-        raise ValueError("El JSON exportado debe contener al menos un pick.")
-
-    for index, pick in enumerate(picks, start=1):
-        validate_pick(pick, index)
-
-    return picks, source_bytes
+    if record["cuota"] <= 0:
+        raise ValueError(f"{label} debe tener una cuota mayor que cero.")
+    if not 0 <= record["probabilidad"] <= 100:
+        raise ValueError(f"{label} tiene una probabilidad fuera de rango.")
 
 
-def copy_atomically(source_bytes: bytes) -> None:
-    DESTINATION.parent.mkdir(parents=True, exist_ok=True)
-    temporary = DESTINATION.with_suffix(f"{DESTINATION.suffix}.tmp")
+def read_and_validate(dataset: PublicDataset) -> tuple[list[dict[str, Any]], bytes]:
+    if not dataset.source.is_file():
+        raise FileNotFoundError(f"No existe el JSON exportado: {dataset.source}")
+
+    source_bytes = dataset.source.read_bytes()
+    records = json.loads(source_bytes.decode("utf-8"))
+    if not isinstance(records, list) or not records:
+        raise ValueError(f"El JSON {dataset.name} debe contener al menos un registro.")
+
+    for index, record in enumerate(records, start=1):
+        validate_record(record, index, dataset)
+    return records, source_bytes
+
+
+def copy_atomically(dataset: PublicDataset, source_bytes: bytes) -> None:
+    dataset.destination.parent.mkdir(parents=True, exist_ok=True)
+    temporary = dataset.destination.with_suffix(f"{dataset.destination.suffix}.tmp")
     try:
         temporary.write_bytes(source_bytes)
-        os.replace(temporary, DESTINATION)
+        os.replace(temporary, dataset.destination)
     finally:
         temporary.unlink(missing_ok=True)
 
 
-def json_has_git_changes(git: str) -> bool:
-    comparison = subprocess.run(
-        [git, "diff", "--quiet", "HEAD", "--", DESTINATION_GIT_PATH],
+def changed_git_paths(git: str) -> list[str]:
+    paths = [dataset.git_path for dataset in DATASETS]
+    status = subprocess.run(
+        [git, "status", "--porcelain", "--", *paths],
         cwd=PROJECT_ROOT,
-        check=False,
+        check=True,
+        capture_output=True,
+        text=True,
     )
-    if comparison.returncode == 0:
-        return False
-    if comparison.returncode == 1:
-        return True
-    raise subprocess.CalledProcessError(comparison.returncode, comparison.args)
+    changed: list[str] = []
+    for line in status.stdout.splitlines():
+        path = line[3:].strip().strip('"')
+        if path in paths:
+            changed.append(path)
+    return changed
 
 
 def print_summary(summary: dict[str, Any]) -> None:
     print("\nResumen final")
-    for field in ("exported", "copied", "total_picks", "build_ok", "committed", "pushed"):
+    fields = (
+        "exported", "copied", "total_picks", "total_results", "build_ok",
+        "committed", "pushed", "git_skipped",
+    )
+    for field in fields:
         value = summary[field]
         if isinstance(value, bool):
             value = str(value).lower()
         print(f"{field}: {value}")
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--no-git",
+        action="store_true",
+        help="valida export, copia y build sin crear commit ni ejecutar push",
+    )
+    return parser.parse_args()
+
+
 def main() -> int:
+    args = parse_args()
     summary: dict[str, Any] = {
         "exported": False,
         "copied": False,
         "total_picks": 0,
+        "total_results": 0,
         "build_ok": False,
         "committed": False,
         "pushed": False,
+        "git_skipped": args.no_git,
     }
 
     try:
-        if not EXPORTER.is_file():
-            raise FileNotFoundError(f"No existe el exportador privado: {EXPORTER}")
-
-        run([exporter_python(), str(EXPORTER)], cwd=PRIVATE_ROOT)
+        for dataset in DATASETS:
+            if not dataset.exporter.is_file():
+                raise FileNotFoundError(f"No existe el exportador privado: {dataset.exporter}")
+            run([exporter_python(), str(dataset.exporter)], cwd=PRIVATE_ROOT)
         summary["exported"] = True
 
-        picks, source_bytes = read_and_validate_source()
-        summary["total_picks"] = len(picks)
-
-        copy_atomically(source_bytes)
+        for dataset in DATASETS:
+            records, source_bytes = read_and_validate(dataset)
+            summary[f"total_{dataset.name}"] = len(records)
+            copy_atomically(dataset, source_bytes)
         summary["copied"] = True
 
         npm = executable("npm.cmd" if os.name == "nt" else "npm")
@@ -173,26 +205,23 @@ def main() -> int:
 
         git = executable("git")
         run([git, "status", "--short", "--branch"], cwd=PROJECT_ROOT)
+        changed_paths = changed_git_paths(git)
 
-        if not json_has_git_changes(git):
-            print("El JSON público no ha cambiado; no se crea commit ni se ejecuta push.")
+        if args.no_git:
+            print("Modo --no-git: no se crea commit ni se ejecuta push.")
+            return 0
+        if not changed_paths:
+            print("Los JSON públicos no han cambiado; no se crea commit ni se ejecuta push.")
             return 0
 
-        run([git, "add", DESTINATION_GIT_PATH], cwd=PROJECT_ROOT)
-        run(
-            [git, "commit", "-m", "Update public picks", "--", DESTINATION_GIT_PATH],
-            cwd=PROJECT_ROOT,
-        )
+        run([git, "add", *changed_paths], cwd=PROJECT_ROOT)
+        run([git, "commit", "-m", "Update public picks and results", "--", *changed_paths], cwd=PROJECT_ROOT)
         summary["committed"] = True
-
         run([git, "push"], cwd=PROJECT_ROOT)
         summary["pushed"] = True
         return 0
     except (
-        FileNotFoundError,
-        UnicodeDecodeError,
-        json.JSONDecodeError,
-        ValueError,
+        FileNotFoundError, UnicodeDecodeError, json.JSONDecodeError, ValueError,
         subprocess.CalledProcessError,
     ) as error:
         print(f"Error: {error}", file=sys.stderr)

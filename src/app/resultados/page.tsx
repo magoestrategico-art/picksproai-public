@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import picksData from "../../../public/data/public_picks.json";
+import resultsData from "../../../public/data/public_results.json";
 
-type Pick = {
+type Result = {
   id: string | number;
   fecha: string;
   liga: string;
@@ -14,33 +14,40 @@ type Pick = {
   estado: string;
 };
 
-type NormalizedStatus = "pending" | "won" | "lost" | "other";
+type NormalizedStatus = "won" | "lost" | "push" | "void" | "canceled" | "other";
 
-const picks = picksData as Pick[];
+const historicalResults = resultsData as Result[];
 
 export const metadata: Metadata = {
   title: "Resultados | Picks Pro AI",
-  description: "Historial público de picks de Picks Pro AI.",
+  description: "Historial público de resultados de Picks Pro AI.",
 };
 
 const statusDetails: Record<NormalizedStatus, { label: string; className: string }> = {
-  pending: { label: "Pendiente", className: "pending" },
   won: { label: "Ganado", className: "won" },
   lost: { label: "Perdido", className: "lost" },
+  push: { label: "Push", className: "push" },
+  void: { label: "Void", className: "void" },
+  canceled: { label: "Cancelado", className: "canceled" },
   other: { label: "Otro", className: "other" },
 };
 
 function normalizeStatus(status: string): NormalizedStatus {
   const normalized = status.trim().toLowerCase();
-
-  if (["pending", "pendiente", "active"].includes(normalized)) return "pending";
   if (["won", "acertado"].includes(normalized)) return "won";
   if (["lost", "fallado"].includes(normalized)) return "lost";
+  if (normalized === "push") return "push";
+  if (normalized === "void") return "void";
+  if (normalized === "canceled") return "canceled";
   return "other";
 }
 
 function formatDate(date: string) {
+  if (/^\d{2}\.\d{2}$/.test(date)) return date;
+
   const parsedDate = new Date(date.includes("T") ? date : `${date}T12:00:00`);
+  if (Number.isNaN(parsedDate.getTime())) return date;
+
   return new Intl.DateTimeFormat("es-ES", {
     day: "2-digit",
     month: "short",
@@ -49,26 +56,33 @@ function formatDate(date: string) {
 }
 
 export default function ResultsPage() {
-  const results = picks.map((pick) => ({ ...pick, normalizedStatus: normalizeStatus(pick.estado) }));
-  const pending = results.filter((pick) => pick.normalizedStatus === "pending").length;
-  const won = results.filter((pick) => pick.normalizedStatus === "won").length;
-  const lost = results.filter((pick) => pick.normalizedStatus === "lost").length;
+  const results = historicalResults.map((result) => ({
+    ...result,
+    normalizedStatus: normalizeStatus(result.estado),
+  }));
+  const won = results.filter((result) => result.normalizedStatus === "won").length;
+  const lost = results.filter((result) => result.normalizedStatus === "lost").length;
+  const push = results.filter((result) => result.normalizedStatus === "push").length;
+  const voidCount = results.filter((result) => result.normalizedStatus === "void").length;
+  const canceled = results.filter((result) => result.normalizedStatus === "canceled").length;
   const settled = won + lost;
   const hitRate = settled > 0 ? (won / settled) * 100 : null;
-  const netProfit = results.reduce((total, pick) => {
-    if (pick.normalizedStatus === "won") return total + (pick.cuota - 1);
-    if (pick.normalizedStatus === "lost") return total - 1;
+  const netProfit = results.reduce((total, result) => {
+    if (result.normalizedStatus === "won") return total + (result.cuota - 1);
+    if (result.normalizedStatus === "lost") return total - 1;
     return total;
   }, 0);
-  const roi = settled > 0 ? (netProfit / settled) * 100 : null;
+  const roi = results.length > 0 ? (netProfit / results.length) * 100 : null;
 
   const metrics = [
-    { label: "Total de picks", value: results.length, note: "Historial publicado" },
-    { label: "Pendientes", value: pending, note: "Por resolver" },
+    { label: "Total resultados", value: results.length, note: "Historial publicado" },
     { label: "Ganados", value: won, note: "Picks acertados" },
     { label: "Perdidos", value: lost, note: "Picks fallados" },
-    { label: "Acierto", value: hitRate === null ? "—" : `${hitRate.toFixed(1)}%`, note: "Sobre picks resueltos" },
-    { label: "ROI simple", value: roi === null ? "—" : `${roi >= 0 ? "+" : ""}${roi.toFixed(1)}%`, note: "Stake fijo de 1 unidad" },
+    { label: "Push", value: push, note: "Stake devuelto" },
+    { label: "Void", value: voidCount, note: "Apuesta anulada" },
+    { label: "Cancelados", value: canceled, note: "Evento cancelado" },
+    { label: "Acierto", value: hitRate === null ? "—" : `${hitRate.toFixed(1)}%`, note: "Sobre ganados y perdidos" },
+    { label: "ROI simple", value: roi === null ? "—" : `${roi >= 0 ? "+" : ""}${roi.toFixed(1)}%`, note: "1 unidad por resultado" },
   ];
 
   return (
@@ -126,18 +140,18 @@ export default function ResultsPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {results.map((pick) => {
-                    const status = statusDetails[pick.normalizedStatus];
+                  {results.map((result) => {
+                    const status = statusDetails[result.normalizedStatus];
                     return (
-                      <tr key={pick.id}>
-                        <td data-label="Fecha">{formatDate(pick.fecha)}</td>
+                      <tr key={result.id}>
+                        <td data-label="Fecha">{formatDate(result.fecha)}</td>
                         <td data-label="Partido">
-                          <strong>{pick.local} <span className="versus">vs</span> {pick.visitante}</strong>
-                          <small>{pick.liga}</small>
+                          <strong>{result.local} <span className="versus">vs</span> {result.visitante}</strong>
+                          <small>{result.liga}</small>
                         </td>
-                        <td data-label="Mercado">{pick.mercado}</td>
-                        <td data-label="Selección"><strong>{pick.seleccion}</strong></td>
-                        <td data-label="Cuota"><strong>{pick.cuota.toFixed(2)}</strong></td>
+                        <td data-label="Mercado">{result.mercado}</td>
+                        <td data-label="Selección"><strong>{result.seleccion}</strong></td>
+                        <td data-label="Cuota"><strong>{result.cuota.toFixed(2)}</strong></td>
                         <td data-label="Estado">
                           <span className={`result-badge result-badge--${status.className}`}>{status.label}</span>
                         </td>
@@ -148,7 +162,7 @@ export default function ResultsPage() {
               </table>
             </div>
           ) : (
-            <p className="empty-state">Todavía no hay picks publicados.</p>
+            <p className="empty-state">Todavía no hay resultados publicados.</p>
           )}
         </section>
       </div>
