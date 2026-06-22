@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
+import { getLeaguePerformances } from "../lib/league-performance";
 
 const baseUrl = "https://picksproai.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
+  const staticPages: MetadataRoute.Sitemap = [
     { url: `${baseUrl}/`, changeFrequency: "daily", priority: 1 },
     { url: `${baseUrl}/resultados`, changeFrequency: "daily", priority: 0.9 },
     { url: `${baseUrl}/estadisticas`, changeFrequency: "daily", priority: 0.9 },
@@ -13,4 +14,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/legal`, changeFrequency: "yearly", priority: 0.4 },
     { url: `${baseUrl}/juego-responsable`, changeFrequency: "yearly", priority: 0.5 },
   ];
+
+  const leaguePages: MetadataRoute.Sitemap = getLeaguePerformances().map((league) => ({
+    url: `${baseUrl}/ligas/${league.slug}`,
+    changeFrequency: "daily",
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...leaguePages];
 }

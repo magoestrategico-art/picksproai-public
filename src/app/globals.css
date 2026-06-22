@@ -326,6 +326,10 @@ h2 {
 .league-summary-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; max-width: 740px; }
 .league-performance-table td:not(:first-child) { font-variant-numeric: tabular-nums; }
 .league-name { color: var(--text); }
+.league-table-link { display: inline-flex; align-items: center; gap: 9px; color: var(--text); font-weight: 750; text-decoration: none; transition: color .2s ease; }
+.league-table-link span { color: var(--accent); transition: transform .2s ease; }
+.league-table-link:hover { color: var(--accent-blue); }
+.league-table-link:hover span { transform: translateX(3px); }
 
 .dashboard-charts {
   display: grid;
