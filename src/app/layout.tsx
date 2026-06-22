@@ -21,6 +21,11 @@ export const metadata: Metadata = {
     "PicksProAI",
   ],
   applicationName: "PicksProAI",
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    shortcut: "/favicon.svg",
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   // Google Search Console verification:
   // verification: {
   //   google: "PENDIENTE_DE_CODIGO_GOOGLE",
