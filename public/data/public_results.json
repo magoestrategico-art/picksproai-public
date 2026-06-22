@@ -42,6 +42,34 @@
     "estado": "lost"
   },
   {
+    "id": 82,
+    "fecha": "2026-06-21",
+    "liga": "Brasil Serie B",
+    "local": "CRB",
+    "visitante": "Fortaleza",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 2.2,
+    "probabilidad": 56.3,
+    "ev": 16.0,
+    "categoria": "ELITE",
+    "estado": "lost"
+  },
+  {
+    "id": 83,
+    "fecha": "2026-06-21",
+    "liga": "Brasil Serie B",
+    "local": "Vila Nova",
+    "visitante": "Náutico",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 2.15,
+    "probabilidad": 56.5,
+    "ev": 16.0,
+    "categoria": "ELITE",
+    "estado": "won"
+  },
+  {
     "id": 41,
     "fecha": "2026-06-16",
     "liga": "Brasil Serie B",
