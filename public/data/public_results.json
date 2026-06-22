@@ -1,5 +1,47 @@
 [
   {
+    "id": 59,
+    "fecha": "2026-06-21",
+    "liga": "Argentina Primera Nacional",
+    "local": "Ferro Carril Oeste",
+    "visitante": "Deportivo Morón",
+    "mercado": "BTTS Sí",
+    "seleccion": "BTTS Sí",
+    "cuota": 2.5,
+    "probabilidad": 50.0,
+    "ev": 16.0,
+    "categoria": "WATCHLIST_PREMIUM",
+    "estado": "lost"
+  },
+  {
+    "id": 60,
+    "fecha": "2026-06-21",
+    "liga": "Argentina Primera Nacional",
+    "local": "Deportivo Maipú",
+    "visitante": "Gimnasia y Tiro",
+    "mercado": "BTTS Sí",
+    "seleccion": "BTTS Sí",
+    "cuota": 2.25,
+    "probabilidad": 52.9,
+    "ev": 13.9,
+    "categoria": "WATCHLIST_PREMIUM",
+    "estado": "lost"
+  },
+  {
+    "id": 61,
+    "fecha": "2026-06-21",
+    "liga": "Argentina Primera Nacional",
+    "local": "San Martín San Juan",
+    "visitante": "Agropecuario",
+    "mercado": "BTTS Sí",
+    "seleccion": "BTTS Sí",
+    "cuota": 2.37,
+    "probabilidad": 50.0,
+    "ev": 13.2,
+    "categoria": "WATCHLIST_PREMIUM",
+    "estado": "lost"
+  },
+  {
     "id": 41,
     "fecha": "2026-06-16",
     "liga": "Brasil Serie B",
