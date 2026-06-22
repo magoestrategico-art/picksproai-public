@@ -54,9 +54,41 @@ export const metadata: Metadata = {
   },
 };
 
+const websiteStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "PicksProAI",
+  url: "https://picksproai.com",
+  description: "Plataforma de análisis deportivo basada en datos y estadísticas históricas.",
+  publisher: {
+    "@type": "Organization",
+    name: "PicksProAI",
+    url: "https://picksproai.com",
+  },
+};
+
+const organizationStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "PicksProAI",
+  url: "https://picksproai.com",
+};
+
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="es">
+      <head>
+        <script
+          id="website-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteStructuredData) }}
+        />
+        <script
+          id="organization-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationStructuredData) }}
+        />
+      </head>
       <body>
         <header className="site-header">
           <nav className="container site-nav" aria-label="Navegación principal">
