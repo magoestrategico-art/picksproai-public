@@ -12,5 +12,61 @@
     "ev": 11.9,
     "categoria": "VALUE",
     "estado": "pending"
+  },
+  {
+    "id": 88,
+    "fecha": "2026-06-23",
+    "liga": "Mundial 2026",
+    "local": "Noruega",
+    "visitante": "Senegal",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 1.9,
+    "probabilidad": 61.1,
+    "ev": 12.8,
+    "categoria": "VALUE",
+    "estado": "pending"
+  },
+  {
+    "id": 90,
+    "fecha": "2026-06-24",
+    "liga": "Mundial 2026",
+    "local": "Panamá",
+    "visitante": "Croacia",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 1.8,
+    "probabilidad": 62.3,
+    "ev": 9.9,
+    "categoria": "VALUE",
+    "estado": "pending"
+  },
+  {
+    "id": 89,
+    "fecha": "2026-06-26",
+    "liga": "Mundial 2026",
+    "local": "Japón",
+    "visitante": "Suecia",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 1.8,
+    "probabilidad": 62.9,
+    "ev": 10.8,
+    "categoria": "VALUE",
+    "estado": "pending"
+  },
+  {
+    "id": 91,
+    "fecha": "2026-06-26",
+    "liga": "Mundial 2026",
+    "local": "Noruega",
+    "visitante": "Francia",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 1.72,
+    "probabilidad": 64.3,
+    "ev": 8.9,
+    "categoria": "VALUE",
+    "estado": "pending"
   }
 ]
