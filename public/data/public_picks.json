@@ -1,47 +1,5 @@
 [
   {
-    "id": 84,
-    "fecha": "2026-06-23",
-    "liga": "Brasil Serie B",
-    "local": "Ponte Preta",
-    "visitante": "Novorizontino",
-    "mercado": "BTTS Sí",
-    "seleccion": "BTTS Sí",
-    "cuota": 2.0,
-    "probabilidad": 57.9,
-    "ev": 11.9,
-    "categoria": "VALUE",
-    "estado": "pending"
-  },
-  {
-    "id": 88,
-    "fecha": "2026-06-23",
-    "liga": "Mundial 2026",
-    "local": "Noruega",
-    "visitante": "Senegal",
-    "mercado": "Over 2.5",
-    "seleccion": "Over 2.5",
-    "cuota": 1.9,
-    "probabilidad": 61.1,
-    "ev": 12.8,
-    "categoria": "VALUE",
-    "estado": "pending"
-  },
-  {
-    "id": 90,
-    "fecha": "2026-06-24",
-    "liga": "Mundial 2026",
-    "local": "Panamá",
-    "visitante": "Croacia",
-    "mercado": "Over 2.5",
-    "seleccion": "Over 2.5",
-    "cuota": 1.8,
-    "probabilidad": 62.3,
-    "ev": 9.9,
-    "categoria": "VALUE",
-    "estado": "pending"
-  },
-  {
     "id": 89,
     "fecha": "2026-06-26",
     "liga": "Mundial 2026",
