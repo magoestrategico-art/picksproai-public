@@ -47,6 +47,8 @@ export default function LegalPage() {
 
         <section><span>06</span><div><h2>Uso bajo responsabilidad del usuario</h2><p>El acceso y uso del sitio se realiza bajo la responsabilidad del usuario. Al utilizar esta web, el usuario reconoce que comprende los riesgos asociados a las apuestas y que debe cumplir la legislación y los límites de edad aplicables en su lugar de residencia.</p></div></section>
 
+        <section><span>07</span><div><h2>Contacto oficial</h2><p>El medio oficial de contacto de PicksProAI es <a className="inline-link" href="mailto:picksproai@gmail.com">picksproai@gmail.com</a>.</p></div></section>
+
         <aside className="legal-callout"><strong>Uso responsable</strong><p>Si decides apostar, utiliza únicamente cantidades cuya pérdida puedas asumir y consulta nuestra página de <Link href="/juego-responsable">Juego Responsable</Link>.</p></aside>
       </article>
     </main>

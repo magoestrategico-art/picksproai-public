@@ -66,6 +66,14 @@ export default function ResponsibleGamingPage() {
           </div>
         </section>
 
+        <section className="help-panel" aria-labelledby="responsible-contact-title">
+          <div><span className="section-kicker">Contacto</span><h2 id="responsible-contact-title">Consultas sobre el sitio</h2></div>
+          <div>
+            <p>Para cualquier consulta relacionada con el sitio o el contenido publicado puedes contactar en:</p>
+            <p><a className="inline-link" href="mailto:picksproai@gmail.com">picksproai@gmail.com</a></p>
+          </div>
+        </section>
+
         <div className="responsible-actions"><Link className="button-link button-link--secondary" href="/metodologia">Consultar metodología</Link><Link className="inline-link" href="/legal">Leer aviso legal →</Link></div>
       </div>
     </main>

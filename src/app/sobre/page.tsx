@@ -107,6 +107,18 @@ export default function AboutPage() {
               </div>
             </div>
           </section>
+
+          <section className="methodology-card methodology-card--wide" aria-labelledby="contact-title">
+            <span className="methodology-card__number">05</span>
+            <div>
+              <span className="section-kicker">Contacto</span>
+              <h2 id="contact-title">Contacto</h2>
+              <p>¿Tienes alguna consulta, sugerencia o propuesta de colaboración?</p>
+              <p>Puedes escribirnos a:</p>
+              <p><a className="inline-link" href="mailto:picksproai@gmail.com">picksproai@gmail.com</a></p>
+              <p>Responderemos lo antes posible.</p>
+            </div>
+          </section>
         </div>
       </div>
     </main>

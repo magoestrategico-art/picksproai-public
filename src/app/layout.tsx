@@ -116,6 +116,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
             <div>
               <Link className="site-brand" href="/">Picks Pro <span>AI</span></Link>
               <p>© PicksProAI 2026</p>
+              <p>Contacto: <a href="mailto:picksproai@gmail.com">picksproai@gmail.com</a></p>
             </div>
             <nav className="site-footer__links" aria-label="Enlaces legales">
               <Link href="/metodologia">Metodología</Link>
