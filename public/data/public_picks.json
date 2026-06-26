@@ -40,5 +40,47 @@
     "ev": 12.7,
     "categoria": "VALUE",
     "estado": "pending"
+  },
+  {
+    "id": 94,
+    "fecha": "2026-07-05",
+    "liga": "Argentina Primera Nacional",
+    "local": "San Martín S.J.",
+    "visitante": "Chacarita",
+    "mercado": "BTTS Sí",
+    "seleccion": "BTTS Sí",
+    "cuota": 2.62,
+    "probabilidad": 49.1,
+    "ev": 16.0,
+    "categoria": "WATCHLIST_PREMIUM",
+    "estado": "pending"
+  },
+  {
+    "id": 95,
+    "fecha": "2026-07-05",
+    "liga": "Argentina Primera Nacional",
+    "local": "CA Estudiantes",
+    "visitante": "Racing de Córdoba",
+    "mercado": "BTTS Sí",
+    "seleccion": "BTTS Sí",
+    "cuota": 2.75,
+    "probabilidad": 45.2,
+    "ev": 16.0,
+    "categoria": "WATCHLIST_PREMIUM",
+    "estado": "pending"
+  },
+  {
+    "id": 96,
+    "fecha": "2026-07-05",
+    "liga": "Argentina Primera Nacional",
+    "local": "Deportivo Madryn",
+    "visitante": "Colón",
+    "mercado": "BTTS Sí",
+    "seleccion": "BTTS Sí",
+    "cuota": 2.25,
+    "probabilidad": 53.3,
+    "ev": 14.5,
+    "categoria": "WATCHLIST_PREMIUM",
+    "estado": "pending"
   }
 ]
