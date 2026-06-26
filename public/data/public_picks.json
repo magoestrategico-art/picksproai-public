@@ -1,19 +1,5 @@
 [
   {
-    "id": 89,
-    "fecha": "2026-06-26",
-    "liga": "Mundial 2026",
-    "local": "Japón",
-    "visitante": "Suecia",
-    "mercado": "Over 2.5",
-    "seleccion": "Over 2.5",
-    "cuota": 1.8,
-    "probabilidad": 62.9,
-    "ev": 10.8,
-    "categoria": "VALUE",
-    "estado": "pending"
-  },
-  {
     "id": 91,
     "fecha": "2026-06-26",
     "liga": "Mundial 2026",
