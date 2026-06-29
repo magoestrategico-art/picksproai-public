@@ -1,5 +1,47 @@
 [
   {
+    "id": 115,
+    "fecha": "2026-06-29",
+    "liga": "Mundial 2026",
+    "local": "Alemania",
+    "visitante": "Paraguay",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 1.72,
+    "probabilidad": 63.6,
+    "ev": 7.7,
+    "categoria": "WATCHLIST",
+    "estado": "pending"
+  },
+  {
+    "id": 113,
+    "fecha": "2026-06-30",
+    "liga": "Mundial 2026",
+    "local": "Francia",
+    "visitante": "Suecia",
+    "mercado": "BTTS Sí",
+    "seleccion": "BTTS Sí",
+    "cuota": 1.95,
+    "probabilidad": 60.5,
+    "ev": 15.1,
+    "categoria": "ELITE",
+    "estado": "pending"
+  },
+  {
+    "id": 114,
+    "fecha": "2026-06-30",
+    "liga": "Mundial 2026",
+    "local": "Costa de Marfil",
+    "visitante": "Noruega",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 1.8,
+    "probabilidad": 62.8,
+    "ev": 10.6,
+    "categoria": "VALUE",
+    "estado": "pending"
+  },
+  {
     "id": 94,
     "fecha": "2026-07-05",
     "liga": "Argentina Primera Nacional",
