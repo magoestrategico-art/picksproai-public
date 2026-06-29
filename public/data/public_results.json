@@ -1,5 +1,33 @@
 [
   {
+    "id": 93,
+    "fecha": "2026-06-28",
+    "liga": "Brasil Serie B",
+    "local": "Náutico",
+    "visitante": "Goiás",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 2.0,
+    "probabilidad": 58.5,
+    "ev": 12.7,
+    "categoria": "VALUE",
+    "estado": "lost"
+  },
+  {
+    "id": 92,
+    "fecha": "2026-06-27",
+    "liga": "Brasil Serie B",
+    "local": "Novorizontino",
+    "visitante": "Vila Nova",
+    "mercado": "BTTS Sí",
+    "seleccion": "BTTS Sí",
+    "cuota": 2.0,
+    "probabilidad": 58.4,
+    "ev": 12.7,
+    "categoria": "VALUE",
+    "estado": "won"
+  },
+  {
     "id": 89,
     "fecha": "2026-06-26",
     "liga": "Mundial 2026",
@@ -12,6 +40,20 @@
     "ev": 10.8,
     "categoria": "VALUE",
     "estado": "lost"
+  },
+  {
+    "id": 91,
+    "fecha": "2026-06-26",
+    "liga": "Mundial 2026",
+    "local": "Noruega",
+    "visitante": "Francia",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 1.72,
+    "probabilidad": 64.3,
+    "ev": 8.9,
+    "categoria": "VALUE",
+    "estado": "won"
   },
   {
     "id": 90,
