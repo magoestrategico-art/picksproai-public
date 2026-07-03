@@ -166,5 +166,19 @@
     "ev": 13.1,
     "categoria": "VALUE",
     "estado": "pending"
+  },
+  {
+    "id": 217,
+    "fecha": "2026-07-06",
+    "liga": "Suecia",
+    "local": "Brommapojkarna",
+    "visitante": "GAIS",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 1.85,
+    "probabilidad": 60.4,
+    "ev": 8.5,
+    "categoria": "WATCHLIST",
+    "estado": "pending"
   }
 ]
