@@ -1,5 +1,19 @@
 [
   {
+    "id": 217,
+    "fecha": "2026-07-06",
+    "liga": "Suecia",
+    "local": "Brommapojkarna",
+    "visitante": "GAIS",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 1.85,
+    "probabilidad": 60.4,
+    "ev": 8.5,
+    "categoria": "WATCHLIST",
+    "estado": "lost"
+  },
+  {
     "id": 94,
     "fecha": "2026-07-05",
     "liga": "Argentina Primera Nacional",
@@ -122,6 +136,20 @@
     "cuota": 1.95,
     "probabilidad": 59.9,
     "ev": 13.1,
+    "categoria": "VALUE",
+    "estado": "lost"
+  },
+  {
+    "id": 214,
+    "fecha": "2026-07-04",
+    "liga": "Brasil Serie B",
+    "local": "Londrina",
+    "visitante": "CRB",
+    "mercado": "BTTS Sí",
+    "seleccion": "BTTS Sí",
+    "cuota": 1.83,
+    "probabilidad": 60.8,
+    "ev": 8.7,
     "categoria": "VALUE",
     "estado": "lost"
   },
