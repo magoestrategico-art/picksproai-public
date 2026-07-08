@@ -49,6 +49,22 @@
   },
   {
     "id": 4,
+    "fecha": "2026-07-12",
+    "liga": "Corea del Sur",
+    "local": "Incheon",
+    "visitante": "Anyang",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 2.15,
+    "probabilidad": 57.0,
+    "ev": 16.0,
+    "confianza": 68.0,
+    "categoria": "ELITE",
+    "estado": "pending",
+    "source": "home_preview"
+  },
+  {
+    "id": 5,
     "fecha": "2026-07-11",
     "liga": "Noruega",
     "local": "Fredrikstad",
@@ -64,7 +80,7 @@
     "source": "home_preview"
   },
   {
-    "id": 5,
+    "id": 6,
     "fecha": "2026-07-12",
     "liga": "Suecia",
     "local": "Västerås SK",
@@ -80,7 +96,7 @@
     "source": "home_preview"
   },
   {
-    "id": 6,
+    "id": 7,
     "fecha": "2026-07-12",
     "liga": "Argentina Primera Nacional",
     "local": "Gimnasia Jujuy",
@@ -96,7 +112,7 @@
     "source": "home_preview"
   },
   {
-    "id": 7,
+    "id": 8,
     "fecha": "2026-07-12",
     "liga": "Argentina Primera Nacional",
     "local": "Club A. Guemes",
@@ -112,7 +128,7 @@
     "source": "home_preview"
   },
   {
-    "id": 8,
+    "id": 9,
     "fecha": "2026-07-13",
     "liga": "Suecia",
     "local": "Djurgarden",
@@ -128,7 +144,23 @@
     "source": "home_preview"
   },
   {
-    "id": 9,
+    "id": 10,
+    "fecha": "2026-07-11",
+    "liga": "Corea del Sur",
+    "local": "Ulsan HD",
+    "visitante": "Jeonbuk",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 1.95,
+    "probabilidad": 59.8,
+    "ev": 12.5,
+    "confianza": 70.0,
+    "categoria": "VALUE",
+    "estado": "pending",
+    "source": "home_preview"
+  },
+  {
+    "id": 11,
     "fecha": "2026-07-12",
     "liga": "Suecia",
     "local": "GAIS",
@@ -144,7 +176,7 @@
     "source": "home_preview"
   },
   {
-    "id": 10,
+    "id": 12,
     "fecha": "2026-07-11",
     "liga": "China",
     "local": "Chengdu Rongcheng",
@@ -156,22 +188,6 @@
     "ev": 10.8,
     "confianza": 73.0,
     "categoria": "VALUE",
-    "estado": "pending",
-    "source": "home_preview"
-  },
-  {
-    "id": 11,
-    "fecha": "2026-07-12",
-    "liga": "Brasil Serie B",
-    "local": "Operario",
-    "visitante": "Novorizontino",
-    "mercado": "BTTS Sí",
-    "seleccion": "BTTS Sí",
-    "cuota": 1.83,
-    "probabilidad": 60.3,
-    "ev": 7.9,
-    "confianza": 77.0,
-    "categoria": "WATCHLIST",
     "estado": "pending",
     "source": "home_preview"
   }
