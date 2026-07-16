@@ -56,6 +56,20 @@
     "estado": "lost"
   },
   {
+    "id": 220,
+    "fecha": "2026-07-12",
+    "liga": "China",
+    "local": "Tianjin Jinmen Tiger",
+    "visitante": "Liaoning Tieren",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 1.9,
+    "probabilidad": 60.0,
+    "ev": 11.1,
+    "categoria": "VALUE",
+    "estado": "void"
+  },
+  {
     "id": 221,
     "fecha": "2026-07-12",
     "liga": "Corea del Sur",
