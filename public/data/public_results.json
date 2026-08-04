@@ -1,5 +1,33 @@
 [
   {
+    "id": 291,
+    "fecha": "2026-07-27",
+    "liga": "Noruega",
+    "local": "Rosenborg",
+    "visitante": "Fredrikstad",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 1.75,
+    "probabilidad": 62.0,
+    "ev": 6.5,
+    "categoria": "WATCHLIST",
+    "estado": "won"
+  },
+  {
+    "id": 296,
+    "fecha": "2026-07-27",
+    "liga": "Noruega",
+    "local": "Rosenborg",
+    "visitante": "Fredrikstad",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 1.75,
+    "probabilidad": 62.0,
+    "ev": 6.5,
+    "categoria": "WATCHLIST",
+    "estado": "won"
+  },
+  {
     "id": 293,
     "fecha": "2026-07-26",
     "liga": "Noruega",
@@ -124,6 +152,48 @@
     "ev": 5.6,
     "categoria": "WATCHLIST",
     "estado": "lost"
+  },
+  {
+    "id": 284,
+    "fecha": "2026-07-23",
+    "liga": "Brasil Serie B",
+    "local": "Operario",
+    "visitante": "Ponte Preta",
+    "mercado": "BTTS Sí",
+    "seleccion": "BTTS Sí",
+    "cuota": 2.2,
+    "probabilidad": 53.9,
+    "ev": 14.2,
+    "categoria": "ELITE",
+    "estado": "won"
+  },
+  {
+    "id": 294,
+    "fecha": "2026-07-23",
+    "liga": "Brasil Serie B",
+    "local": "Ceará",
+    "visitante": "CRB",
+    "mercado": "BTTS Sí",
+    "seleccion": "BTTS Sí",
+    "cuota": 1.83,
+    "probabilidad": 59.8,
+    "ev": 7.2,
+    "categoria": "WATCHLIST",
+    "estado": "lost"
+  },
+  {
+    "id": 295,
+    "fecha": "2026-07-23",
+    "liga": "Brasil Serie B",
+    "local": "Náutico",
+    "visitante": "Londrina",
+    "mercado": "BTTS Sí",
+    "seleccion": "BTTS Sí",
+    "cuota": 1.83,
+    "probabilidad": 59.4,
+    "ev": 6.5,
+    "categoria": "WATCHLIST",
+    "estado": "won"
   },
   {
     "id": 286,
