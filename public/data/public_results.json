@@ -1,5 +1,47 @@
 [
   {
+    "id": 271,
+    "fecha": "2026-08-06",
+    "liga": "Argentina Primera Nacional",
+    "local": "Quilmes",
+    "visitante": "Gimnasia Jujuy",
+    "mercado": "BTTS Sí",
+    "seleccion": "BTTS Sí",
+    "cuota": 2.1,
+    "probabilidad": 52.8,
+    "ev": 7.9,
+    "categoria": "WATCHLIST",
+    "estado": "lost"
+  },
+  {
+    "id": 278,
+    "fecha": "2026-08-06",
+    "liga": "Argentina Primera Nacional",
+    "local": "Quilmes",
+    "visitante": "Gimnasia Jujuy",
+    "mercado": "BTTS Sí",
+    "seleccion": "BTTS Sí",
+    "cuota": 2.1,
+    "probabilidad": 52.8,
+    "ev": 7.9,
+    "categoria": "WATCHLIST",
+    "estado": "lost"
+  },
+  {
+    "id": 283,
+    "fecha": "2026-08-06",
+    "liga": "Argentina Primera Nacional",
+    "local": "Quilmes",
+    "visitante": "Gimnasia Jujuy",
+    "mercado": "BTTS Sí",
+    "seleccion": "BTTS Sí",
+    "cuota": 2.1,
+    "probabilidad": 52.8,
+    "ev": 7.9,
+    "categoria": "WATCHLIST",
+    "estado": "lost"
+  },
+  {
     "id": 291,
     "fecha": "2026-07-27",
     "liga": "Noruega",
