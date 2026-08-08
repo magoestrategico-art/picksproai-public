@@ -1,38 +1,6 @@
 [
   {
     "id": 1,
-    "fecha": "2026-08-07",
-    "liga": "Noruega",
-    "local": "Sandefjord",
-    "visitante": "KFUM Oslo",
-    "mercado": "Over 2.5",
-    "seleccion": "Over 2.5",
-    "cuota": 1.7,
-    "probabilidad": 62.9,
-    "ev": 5.3,
-    "confianza": 72.0,
-    "categoria": "WATCHLIST",
-    "estado": "pending",
-    "stake": 0.25
-  },
-  {
-    "id": 2,
-    "fecha": "2026-08-08",
-    "liga": "Brasil Serie B",
-    "local": "Operario",
-    "visitante": "Sao Bernardo",
-    "mercado": "BTTS Sí",
-    "seleccion": "BTTS Sí",
-    "cuota": 1.83,
-    "probabilidad": 59.4,
-    "ev": 6.6,
-    "confianza": 75.0,
-    "categoria": "WATCHLIST",
-    "estado": "pending",
-    "stake": 0.25
-  },
-  {
-    "id": 3,
     "fecha": "2026-08-08",
     "liga": "Corea del Sur",
     "local": "Gimcheon Sangmu",
@@ -48,7 +16,7 @@
     "stake": 0.25
   },
   {
-    "id": 4,
+    "id": 2,
     "fecha": "2026-08-08",
     "liga": "Corea del Sur",
     "local": "Pohang",
@@ -64,7 +32,7 @@
     "stake": 1.0
   },
   {
-    "id": 5,
+    "id": 3,
     "fecha": "2026-08-08",
     "liga": "Liga Portugal 2026-2027",
     "local": "Vitória Guimaraes",
@@ -80,7 +48,7 @@
     "stake": 0.25
   },
   {
-    "id": 6,
+    "id": 4,
     "fecha": "2026-08-08",
     "liga": "Noruega",
     "local": "Start",
@@ -96,7 +64,7 @@
     "stake": 0.25
   },
   {
-    "id": 7,
+    "id": 5,
     "fecha": "2026-08-08",
     "liga": "Suecia",
     "local": "Mjallby",
@@ -112,7 +80,7 @@
     "stake": 1.0
   },
   {
-    "id": 8,
+    "id": 6,
     "fecha": "2026-08-09",
     "liga": "China",
     "local": "Chongqing Tonglianglong",
@@ -128,7 +96,7 @@
     "stake": 0.25
   },
   {
-    "id": 9,
+    "id": 7,
     "fecha": "2026-08-09",
     "liga": "China",
     "local": "Henan Songshan Longmen",
@@ -144,7 +112,7 @@
     "stake": 0.25
   },
   {
-    "id": 10,
+    "id": 8,
     "fecha": "2026-08-09",
     "liga": "Liga Portugal 2 2026-2027",
     "local": "Vizela",
@@ -160,7 +128,7 @@
     "stake": 0.25
   },
   {
-    "id": 11,
+    "id": 9,
     "fecha": "2026-08-09",
     "liga": "Liga Portugal 2026-2027",
     "local": "Moreirense",
@@ -176,7 +144,7 @@
     "stake": 0.25
   },
   {
-    "id": 12,
+    "id": 10,
     "fecha": "2026-08-09",
     "liga": "Suecia",
     "local": "Göteborg",
@@ -192,7 +160,7 @@
     "stake": 0.25
   },
   {
-    "id": 13,
+    "id": 11,
     "fecha": "2026-08-09",
     "liga": "Suecia",
     "local": "Halmstad",
@@ -208,7 +176,7 @@
     "stake": 0.25
   },
   {
-    "id": 14,
+    "id": 12,
     "fecha": "2026-08-09",
     "liga": "Suecia",
     "local": "Malmö",
@@ -224,7 +192,7 @@
     "stake": 0.25
   },
   {
-    "id": 15,
+    "id": 13,
     "fecha": "2026-08-10",
     "liga": "Argentina Primera Nacional",
     "local": "Gimnasia Jujuy",
@@ -240,7 +208,7 @@
     "stake": 1.0
   },
   {
-    "id": 16,
+    "id": 14,
     "fecha": "2026-08-10",
     "liga": "Suecia",
     "local": "Sirius",
@@ -256,7 +224,7 @@
     "stake": 0.25
   },
   {
-    "id": 17,
+    "id": 15,
     "fecha": "2026-08-11",
     "liga": "Brasil Serie B",
     "local": "Goiás",
@@ -272,7 +240,7 @@
     "stake": 1.0
   },
   {
-    "id": 18,
+    "id": 16,
     "fecha": "2026-08-12",
     "liga": "Brasil Serie B",
     "local": "Avaí",
@@ -288,7 +256,7 @@
     "stake": 0.25
   },
   {
-    "id": 19,
+    "id": 17,
     "fecha": "2026-08-26",
     "liga": "Argentina Primera Nacional",
     "local": "Deportivo Madryn",

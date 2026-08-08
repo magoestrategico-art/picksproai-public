@@ -1,5 +1,33 @@
 [
   {
+    "id": 391,
+    "fecha": "2026-08-08",
+    "liga": "Brasil Serie B",
+    "local": "Operario",
+    "visitante": "Sao Bernardo",
+    "mercado": "BTTS Sí",
+    "seleccion": "BTTS Sí",
+    "cuota": 1.83,
+    "probabilidad": 59.4,
+    "ev": 6.6,
+    "categoria": "WATCHLIST",
+    "estado": "won"
+  },
+  {
+    "id": 317,
+    "fecha": "2026-08-07",
+    "liga": "Noruega",
+    "local": "Sandefjord",
+    "visitante": "KFUM Oslo",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 1.7,
+    "probabilidad": 62.9,
+    "ev": 5.3,
+    "categoria": "WATCHLIST",
+    "estado": "lost"
+  },
+  {
     "id": 271,
     "fecha": "2026-08-06",
     "liga": "Argentina Primera Nacional",
