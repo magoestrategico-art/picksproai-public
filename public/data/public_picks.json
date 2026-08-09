@@ -2,54 +2,6 @@
   {
     "id": 1,
     "fecha": "2026-08-09",
-    "liga": "China",
-    "local": "Chongqing Tonglianglong",
-    "visitante": "Shanghai Port",
-    "mercado": "Over 2.5",
-    "seleccion": "Over 2.5",
-    "cuota": 1.85,
-    "probabilidad": 58.9,
-    "ev": 6.9,
-    "confianza": 68.0,
-    "categoria": "WATCHLIST",
-    "estado": "pending",
-    "stake": 0.25
-  },
-  {
-    "id": 2,
-    "fecha": "2026-08-09",
-    "liga": "China",
-    "local": "Henan Songshan Longmen",
-    "visitante": "Qingdao West Coast",
-    "mercado": "Under 2.5",
-    "seleccion": "Under 2.5",
-    "cuota": 2.25,
-    "probabilidad": 48.6,
-    "ev": 6.8,
-    "confianza": 67.0,
-    "categoria": "WATCHLIST",
-    "estado": "pending",
-    "stake": 0.25
-  },
-  {
-    "id": 3,
-    "fecha": "2026-08-09",
-    "liga": "Liga Portugal 2 2026-2027",
-    "local": "Vizela",
-    "visitante": "Leiria",
-    "mercado": "Over 2.5",
-    "seleccion": "Over 2.5",
-    "cuota": 1.95,
-    "probabilidad": 58.4,
-    "ev": 10.4,
-    "confianza": 71.0,
-    "categoria": "VALUE",
-    "estado": "pending",
-    "stake": 0.25
-  },
-  {
-    "id": 4,
-    "fecha": "2026-08-09",
     "liga": "Liga Portugal 2026-2027",
     "local": "Moreirense",
     "visitante": "SC Braga",
@@ -64,55 +16,7 @@
     "stake": 0.25
   },
   {
-    "id": 5,
-    "fecha": "2026-08-09",
-    "liga": "Suecia",
-    "local": "Göteborg",
-    "visitante": "Kalmar",
-    "mercado": "Over 2.5",
-    "seleccion": "Over 2.5",
-    "cuota": 1.7,
-    "probabilidad": 63.6,
-    "ev": 6.4,
-    "confianza": 79.0,
-    "categoria": "WATCHLIST",
-    "estado": "pending",
-    "stake": 0.25
-  },
-  {
-    "id": 6,
-    "fecha": "2026-08-09",
-    "liga": "Suecia",
-    "local": "Halmstad",
-    "visitante": "GAIS",
-    "mercado": "Over 2.5",
-    "seleccion": "Over 2.5",
-    "cuota": 1.7,
-    "probabilidad": 62.8,
-    "ev": 5.0,
-    "confianza": 74.0,
-    "categoria": "WATCHLIST",
-    "estado": "pending",
-    "stake": 0.25
-  },
-  {
-    "id": 7,
-    "fecha": "2026-08-09",
-    "liga": "Suecia",
-    "local": "Malmö",
-    "visitante": "Degerfors",
-    "mercado": "BTTS Sí",
-    "seleccion": "BTTS Sí",
-    "cuota": 1.7,
-    "probabilidad": 62.4,
-    "ev": 4.8,
-    "confianza": 78.0,
-    "categoria": "WATCHLIST",
-    "estado": "pending",
-    "stake": 0.25
-  },
-  {
-    "id": 8,
+    "id": 2,
     "fecha": "2026-08-10",
     "liga": "Argentina Primera Nacional",
     "local": "Gimnasia Jujuy",
@@ -128,7 +32,7 @@
     "stake": 1.0
   },
   {
-    "id": 9,
+    "id": 3,
     "fecha": "2026-08-10",
     "liga": "Suecia",
     "local": "Sirius",
@@ -144,7 +48,7 @@
     "stake": 0.25
   },
   {
-    "id": 10,
+    "id": 4,
     "fecha": "2026-08-11",
     "liga": "Brasil Serie B",
     "local": "Goiás",
@@ -160,7 +64,7 @@
     "stake": 1.0
   },
   {
-    "id": 11,
+    "id": 5,
     "fecha": "2026-08-12",
     "liga": "Brasil Serie B",
     "local": "Avaí",
@@ -176,7 +80,7 @@
     "stake": 0.25
   },
   {
-    "id": 12,
+    "id": 6,
     "fecha": "2026-08-26",
     "liga": "Argentina Primera Nacional",
     "local": "Deportivo Madryn",
