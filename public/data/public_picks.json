@@ -1,54 +1,6 @@
 [
   {
     "id": 1,
-    "fecha": "2026-08-10",
-    "liga": "Argentina Primera Nacional",
-    "local": "Gimnasia Jujuy",
-    "visitante": "Tristán Suárez",
-    "mercado": "BTTS Sí",
-    "seleccion": "BTTS Sí",
-    "cuota": 2.25,
-    "probabilidad": 51.4,
-    "ev": 11.4,
-    "confianza": 75.0,
-    "categoria": "VALUE",
-    "estado": "pending",
-    "stake": 1.0
-  },
-  {
-    "id": 2,
-    "fecha": "2026-08-10",
-    "liga": "Suecia",
-    "local": "Sirius",
-    "visitante": "Brommapojkarna",
-    "mercado": "BTTS Sí",
-    "seleccion": "BTTS Sí",
-    "cuota": 1.61,
-    "probabilidad": 65.2,
-    "ev": 4.1,
-    "confianza": 78.0,
-    "categoria": "WATCHLIST",
-    "estado": "pending",
-    "stake": 0.25
-  },
-  {
-    "id": 3,
-    "fecha": "2026-08-11",
-    "liga": "Brasil Serie B",
-    "local": "Goiás",
-    "visitante": "Londrina",
-    "mercado": "BTTS Sí",
-    "seleccion": "BTTS Sí",
-    "cuota": 2.0,
-    "probabilidad": 57.1,
-    "ev": 10.8,
-    "confianza": 78.0,
-    "categoria": "VALUE",
-    "estado": "pending",
-    "stake": 1.0
-  },
-  {
-    "id": 4,
     "fecha": "2026-08-12",
     "liga": "Brasil Serie B",
     "local": "Avaí",
@@ -64,7 +16,7 @@
     "stake": 0.25
   },
   {
-    "id": 5,
+    "id": 2,
     "fecha": "2026-08-26",
     "liga": "Argentina Primera Nacional",
     "local": "Deportivo Madryn",
