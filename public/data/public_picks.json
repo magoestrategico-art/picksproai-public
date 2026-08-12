@@ -1,22 +1,6 @@
 [
   {
     "id": 1,
-    "fecha": "2026-08-12",
-    "liga": "Brasil Serie B",
-    "local": "Avaí",
-    "visitante": "CRB",
-    "mercado": "BTTS Sí",
-    "seleccion": "BTTS Sí",
-    "cuota": 1.83,
-    "probabilidad": 59.8,
-    "ev": 7.2,
-    "confianza": 75.0,
-    "categoria": "WATCHLIST",
-    "estado": "pending",
-    "stake": 0.25
-  },
-  {
-    "id": 2,
     "fecha": "2026-08-26",
     "liga": "Argentina Primera Nacional",
     "local": "Deportivo Madryn",
