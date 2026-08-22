@@ -1,5 +1,47 @@
 [
   {
+    "id": 563,
+    "fecha": "2026-08-22",
+    "liga": "Championship 2026-2027",
+    "local": "Preston",
+    "visitante": "Wolves",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 1.8,
+    "probabilidad": 61.8,
+    "ev": 9.6,
+    "categoria": "VALUE",
+    "estado": "won"
+  },
+  {
+    "id": 567,
+    "fecha": "2026-08-22",
+    "liga": "Corea del Sur",
+    "local": "Anyang",
+    "visitante": "Seoul",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 1.95,
+    "probabilidad": 58.4,
+    "ev": 10.4,
+    "categoria": "VALUE",
+    "estado": "won"
+  },
+  {
+    "id": 568,
+    "fecha": "2026-08-22",
+    "liga": "Corea del Sur",
+    "local": "Jeonbuk",
+    "visitante": "Ulsan HD",
+    "mercado": "Under 2.5",
+    "seleccion": "Under 2.5",
+    "cuota": 2.1,
+    "probabilidad": 53.1,
+    "ev": 8.5,
+    "categoria": "VALUE",
+    "estado": "won"
+  },
+  {
     "id": 432,
     "fecha": "2026-08-17",
     "liga": "Suecia",
