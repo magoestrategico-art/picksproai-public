@@ -1,5 +1,19 @@
 [
   {
+    "id": 432,
+    "fecha": "2026-08-17",
+    "liga": "Suecia",
+    "local": "Häcken",
+    "visitante": "Halmstad",
+    "mercado": "BTTS Sí",
+    "seleccion": "BTTS Sí",
+    "cuota": 1.7,
+    "probabilidad": 62.1,
+    "ev": 4.4,
+    "categoria": "WATCHLIST",
+    "estado": "lost"
+  },
+  {
     "id": 420,
     "fecha": "2026-08-16",
     "liga": "Brasil Serie B",
