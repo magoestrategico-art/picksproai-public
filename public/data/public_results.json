@@ -1,5 +1,19 @@
 [
   {
+    "id": 282,
+    "fecha": "2026-08-26",
+    "liga": "Argentina Primera Nacional",
+    "local": "Deportivo Madryn",
+    "visitante": "Godoy Cruz",
+    "mercado": "BTTS Sí",
+    "seleccion": "BTTS Sí",
+    "cuota": 2.37,
+    "probabilidad": 50.5,
+    "ev": 14.2,
+    "categoria": "ELITE",
+    "estado": "lost"
+  },
+  {
     "id": 570,
     "fecha": "2026-08-23",
     "liga": "Brasil Serie B",
