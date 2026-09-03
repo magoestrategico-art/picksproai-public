@@ -1,5 +1,19 @@
 [
   {
+    "id": 604,
+    "fecha": "2026-09-02",
+    "liga": "Championship 2026-2027",
+    "local": "Burnley",
+    "visitante": "Middlesbrough",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 1.72,
+    "probabilidad": 63.1,
+    "ev": 7.4,
+    "categoria": "WATCHLIST",
+    "estado": "lost"
+  },
+  {
     "id": 580,
     "fecha": "2026-09-01",
     "liga": "Argentina Primera Nacional",
@@ -26,6 +40,62 @@
     "ev": 4.1,
     "categoria": "WATCHLIST",
     "estado": "won"
+  },
+  {
+    "id": 601,
+    "fecha": "2026-09-01",
+    "liga": "Championship 2026-2027",
+    "local": "Stoke",
+    "visitante": "Norwich",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 1.9,
+    "probabilidad": 60.7,
+    "ev": 13.0,
+    "categoria": "VALUE",
+    "estado": "lost"
+  },
+  {
+    "id": 602,
+    "fecha": "2026-09-01",
+    "liga": "Championship 2026-2027",
+    "local": "Lincoln",
+    "visitante": "Blackburn",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 1.9,
+    "probabilidad": 60.4,
+    "ev": 12.0,
+    "categoria": "VALUE",
+    "estado": "lost"
+  },
+  {
+    "id": 603,
+    "fecha": "2026-09-01",
+    "liga": "Championship 2026-2027",
+    "local": "Birmingham",
+    "visitante": "Southampton",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 1.72,
+    "probabilidad": 63.8,
+    "ev": 8.1,
+    "categoria": "WATCHLIST",
+    "estado": "lost"
+  },
+  {
+    "id": 605,
+    "fecha": "2026-09-01",
+    "liga": "Championship 2026-2027",
+    "local": "Portsmouth",
+    "visitante": "Derby",
+    "mercado": "BTTS Sí",
+    "seleccion": "BTTS Sí",
+    "cuota": 1.8,
+    "probabilidad": 60.4,
+    "ev": 7.1,
+    "categoria": "WATCHLIST",
+    "estado": "lost"
   },
   {
     "id": 581,
