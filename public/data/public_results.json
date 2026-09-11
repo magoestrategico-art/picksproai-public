@@ -1,5 +1,33 @@
 [
   {
+    "id": 620,
+    "fecha": "2026-09-07",
+    "liga": "Suecia",
+    "local": "Mjallby",
+    "visitante": "Göteborg",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 1.75,
+    "probabilidad": 62.1,
+    "ev": 6.9,
+    "categoria": "WATCHLIST",
+    "estado": "won"
+  },
+  {
+    "id": 622,
+    "fecha": "2026-09-07",
+    "liga": "Suecia",
+    "local": "Kalmar",
+    "visitante": "Djurgarden",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 1.66,
+    "probabilidad": 63.8,
+    "ev": 4.6,
+    "categoria": "WATCHLIST",
+    "estado": "lost"
+  },
+  {
     "id": 609,
     "fecha": "2026-09-06",
     "liga": "2. Bundesliga 2026-2027",
