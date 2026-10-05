@@ -1,5 +1,33 @@
 [
   {
+    "id": 648,
+    "fecha": "2026-10-03",
+    "liga": "Brasil Serie B",
+    "local": "Fortaleza",
+    "visitante": "Náutico",
+    "mercado": "Under 2.5",
+    "seleccion": "Under 2.5",
+    "cuota": 1.8,
+    "probabilidad": 59.7,
+    "ev": 5.8,
+    "categoria": "WATCHLIST",
+    "estado": "won"
+  },
+  {
+    "id": 649,
+    "fecha": "2026-10-02",
+    "liga": "Brasil Serie B",
+    "local": "Novorizontino",
+    "visitante": "Goiás",
+    "mercado": "Under 2.5",
+    "seleccion": "Under 2.5",
+    "cuota": 1.8,
+    "probabilidad": 59.4,
+    "ev": 5.3,
+    "categoria": "WATCHLIST",
+    "estado": "lost"
+  },
+  {
     "id": 632,
     "fecha": "2026-09-20",
     "liga": "Argentina Primera Nacional",
