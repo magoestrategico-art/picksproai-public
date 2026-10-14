@@ -49,18 +49,18 @@
   },
   {
     "id": 4,
-    "fecha": "2026-10-05",
-    "liga": "España Segunda 2026-2027",
-    "local": "Córdoba",
-    "visitante": "Tenerife",
+    "fecha": "2026-10-11",
+    "liga": "italia_serie_a_2026_2027",
+    "local": "Sassuolo",
+    "visitante": "AC Milan",
     "mercado": "Over 2.5",
     "seleccion": "Over 2.5",
-    "cuota": 1.85,
-    "probabilidad": 60.9,
-    "ev": 10.0,
-    "confianza": 80.0,
-    "categoria": "VALUE",
+    "cuota": 1.72,
+    "probabilidad": 62.5,
+    "ev": 6.0,
+    "confianza": 74.0,
+    "categoria": "WATCHLIST",
     "estado": "pending",
-    "stake": 1.0
+    "stake": 0.25
   }
 ]
