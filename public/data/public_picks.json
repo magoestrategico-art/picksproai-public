@@ -1,22 +1,6 @@
 [
   {
     "id": 1,
-    "fecha": "2026-08-16",
-    "liga": "Liga Portugal 2026-2027",
-    "local": "SC Braga",
-    "visitante": "Gil Vicente",
-    "mercado": "Over 2.5",
-    "seleccion": "Over 2.5",
-    "cuota": 1.95,
-    "probabilidad": 58.9,
-    "ev": 11.3,
-    "confianza": 74.0,
-    "categoria": "VALUE",
-    "estado": "pending",
-    "stake": 0.67
-  },
-  {
-    "id": 2,
     "fecha": "2026-10-24",
     "liga": "francia_ligue_2_2026_2027",
     "local": "Saint-Étienne",
@@ -32,23 +16,7 @@
     "stake": 1.0
   },
   {
-    "id": 3,
-    "fecha": "2026-10-26",
-    "liga": "Liga Portugal 2026-2027",
-    "local": "Santa Clara",
-    "visitante": "Benfica",
-    "mercado": "Over 2.5",
-    "seleccion": "Over 2.5",
-    "cuota": 1.8,
-    "probabilidad": 61.1,
-    "ev": 7.8,
-    "confianza": 79.0,
-    "categoria": "WATCHLIST",
-    "estado": "pending",
-    "stake": 1.0
-  },
-  {
-    "id": 4,
+    "id": 2,
     "fecha": "2026-10-27",
     "liga": "Croacia HNL",
     "local": "Dinamo Zagreb",

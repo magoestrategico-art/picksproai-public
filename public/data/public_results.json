@@ -1,5 +1,19 @@
 [
   {
+    "id": 685,
+    "fecha": "2026-10-26",
+    "liga": "Liga Portugal 2026-2027",
+    "local": "Santa Clara",
+    "visitante": "Benfica",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 1.8,
+    "probabilidad": 61.1,
+    "ev": 7.8,
+    "categoria": "WATCHLIST",
+    "estado": "won"
+  },
+  {
     "id": 686,
     "fecha": "2026-10-25",
     "liga": "Argentina Primera Nacional",
@@ -235,6 +249,20 @@
     "probabilidad": 64.1,
     "ev": 4.8,
     "categoria": "WATCHLIST",
+    "estado": "won"
+  },
+  {
+    "id": 422,
+    "fecha": "2026-10-19",
+    "liga": "Liga Portugal 2026-2027",
+    "local": "SC Braga",
+    "visitante": "Gil Vicente",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 1.95,
+    "probabilidad": 58.9,
+    "ev": 11.3,
+    "categoria": "VALUE",
     "estado": "won"
   },
   {
