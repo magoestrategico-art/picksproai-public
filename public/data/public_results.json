@@ -1,5 +1,19 @@
 [
   {
+    "id": 696,
+    "fecha": "2026-10-27",
+    "liga": "Croacia HNL",
+    "local": "Dinamo Zagreb",
+    "visitante": "Rijeka",
+    "mercado": "Over 2.5",
+    "seleccion": "Over 2.5",
+    "cuota": 1.72,
+    "probabilidad": 63.7,
+    "ev": 7.9,
+    "categoria": "WATCHLIST",
+    "estado": "won"
+  },
+  {
     "id": 685,
     "fecha": "2026-10-26",
     "liga": "Liga Portugal 2026-2027",
