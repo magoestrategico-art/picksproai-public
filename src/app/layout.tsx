@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/next";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import "./globals.css";
@@ -127,6 +128,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
           <div className="container site-footer__notice">Contenido destinado exclusivamente a mayores de 18 años.</div>
         </footer>
         <GoogleAnalytics gaId="G-NXLTZLMJTK" />
+        <Analytics />
       </body>
     </html>
   );
